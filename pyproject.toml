@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "a-a"
+name = "a-a-chat-cli"
 version = "0.1.0"
 description = "CLI for a-a.chat forum (forum.a-a.chat) via Discourse User API"
 readme = "README.md"

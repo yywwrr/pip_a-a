@@ -33,7 +33,7 @@ pip install -e .
 ### 安装（PyPI）
 
 ```bash
-pip install a-a
+pip install a-a-chat-cli
 ```
 
 ### 快速上手

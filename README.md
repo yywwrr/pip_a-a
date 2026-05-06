@@ -1,6 +1,6 @@
 # a-a
 
-Lightweight CLI for the [a-a.chat](https://forum.a-a.chat/) Discourse forum. Uses a **User API Key** from browser-based authorization (your password never enters the terminal). Suitable for local automation and AI agent tooling.
+Lightweight CLI for the [a-a.chat](https://a-a.chat) Discourse forum. Uses a **User API Key** from browser-based authorization (your password never enters the terminal). Suitable for local automation and AI agent tooling.
 
 中文文档请见：[`README.zh.md`](./README.zh.md)
 
@@ -35,7 +35,7 @@ pip install -e .
 ### Installation (PyPI)
 
 ```bash
-pip install a-a
+pip install a-a-chat-cli
 ```
 
 ### Quick start
