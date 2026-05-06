@@ -108,8 +108,11 @@ def _make_redirect_handler(expected_path: str, holder: _RedirectPayloadHolder) -
                 return
             holder.payload = extracted
             body = (
-                "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>授权完成</title></head>"
-                "<body><p>授权已完成，可关闭此页并返回终端。</p></body></html>"
+                "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Authorization complete</title></head>"
+                "<body>"
+                "<p>Authorization complete. You can close this page and return to the terminal.</p>"
+                "<p>授权已完成，可关闭此页并返回终端。</p>"
+                "</body></html>"
             )
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
@@ -151,7 +154,7 @@ def start_auth_redirect_listener(
                     raise RuntimeError(holder.error)
                 if time.monotonic() >= deadline:
                     raise TimeoutError(
-                        "等待授权回调超时（可以尝试改用 --manual 手动授权）"
+                        "Timed out waiting for auth callback (try --manual)."
                     )
                 try:
                     httpd.handle_request()
