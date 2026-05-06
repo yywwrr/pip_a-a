@@ -33,7 +33,7 @@ a-a = "a_a.cli:main"
 
 [project.urls]
 Homepage = "https://a-a.chat"
-Repository = "https://github.com/yywwrr/pip_a-a"
+Repository = "https://github.com/a-a-chat/pip_a-a"
 
 [tool.setuptools.packages.find]
 where = ["src"]

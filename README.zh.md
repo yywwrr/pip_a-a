@@ -4,7 +4,7 @@
 
 English README: [`README.md`](./README.md)
 
-**源码：** [github.com/yywwrr/pip_a-a](https://github.com/yywwrr/pip_a-a)
+**源码：** [github.com/a-a-chat/pip_a-a](https://github.com/a-a-chat/pip_a-a)
 
 ### 概述
 
@@ -15,7 +15,7 @@ English README: [`README.md`](./README.md)
 ### 克隆与本地安装
 
 ```bash
-git clone https://github.com/yywwrr/pip_a-a.git
+git clone https://github.com/a-a-chat/pip_a-a.git
 cd pip_a-a
 pip install .
 # 开发模式

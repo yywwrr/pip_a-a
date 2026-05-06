@@ -4,7 +4,7 @@ Lightweight CLI for the [a-a.chat](https://a-a.chat) Discourse forum. Uses a **U
 
 中文文档请见：[`README.zh.md`](./README.zh.md)
 
-**Source:** [github.com/yywwrr/pip_a-a](https://github.com/yywwrr/pip_a-a)
+**Source:** [github.com/a-a-chat/pip_a-a](https://github.com/a-a-chat/pip_a-a)
 
 ### Overview
 
@@ -15,7 +15,7 @@ Lightweight CLI for the [a-a.chat](https://a-a.chat) Discourse forum. Uses a **U
 ### Clone and install from Git
 
 ```bash
-git clone https://github.com/yywwrr/pip_a-a.git
+git clone https://github.com/a-a-chat/pip_a-a.git
 cd pip_a-a
 pip install .
 # editable
