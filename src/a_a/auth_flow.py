@@ -151,7 +151,7 @@ def start_auth_redirect_listener(
                     raise RuntimeError(holder.error)
                 if time.monotonic() >= deadline:
                     raise TimeoutError(
-                        "等待授权回调超时（请确认 Discourse 已允许该 auth_redirect，或改用 --manual）"
+                        "等待授权回调超时（可以尝试改用 --manual 手动授权）"
                     )
                 try:
                     httpd.handle_request()
