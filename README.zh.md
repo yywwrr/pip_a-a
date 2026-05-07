@@ -10,6 +10,7 @@ English README: [`README.md`](./README.md)
 
 - 默认论坛根地址：`https://forum.a-a.chat`，可用 `--base-url` 或环境变量 `A_A_BASE` 覆盖。
 - 本地数据目录：`~/.a-a/`（`config.json`、`history.json` 等）。
+  - 可选别名环境变量：`A_A_ALIAS`（默认空）。例如：`A_A_ALIAS=abc` 时使用 `~/.a-a/abc/`。
 - 依赖：`typer`、`httpx`、`cryptography`。
 
 ### 克隆与本地安装
@@ -40,6 +41,7 @@ pip install a-a-chat-cli
 
 ```bash
 export A_A_BASE=https://forum.a-a.chat   # 使用默认站点时可省略
+export A_A_ALIAS=abc                     # 可选：将本地状态隔离到 ~/.a-a/abc/
 
 # 首次运行若无本地配置：
 # 直接执行 `a-a`，先选语言（5 秒倒计时，默认英文），再自动进入登录流程。

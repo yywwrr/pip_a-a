@@ -1,10 +1,31 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 from typing import Any
 
-CONFIG_DIR = Path.home() / ".a-a"
+ALIAS_ENV_VAR = "A_A_ALIAS"
+
+
+def _normalized_alias() -> str:
+    raw = (os.environ.get(ALIAS_ENV_VAR) or "").strip()
+    if not raw:
+        return ""
+    if "/" in raw or "\\" in raw or raw in {".", ".."}:
+        raise ValueError(
+            f"Invalid {ALIAS_ENV_VAR}={raw!r}: alias must be a single folder name."
+        )
+    return raw
+
+
+def _config_root_dir() -> Path:
+    base = Path.home() / ".a-a"
+    alias = _normalized_alias()
+    return base / alias if alias else base
+
+
+CONFIG_DIR = _config_root_dir()
 CONFIG_PATH = CONFIG_DIR / "config.json"
 HISTORY_PATH = CONFIG_DIR / "history.json"
 REPLIES_PATH = CONFIG_DIR / "replies.json"

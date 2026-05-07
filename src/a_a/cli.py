@@ -31,7 +31,7 @@ app = typer.Typer(
     no_args_is_help=False,
     invoke_without_command=True,
     help=(
-        "CLI for a-a.chat forum (local config: ~/.a-a/).\n\n"
+        "CLI for a-a.chat forum (local config: ~/.a-a/; optional alias via A_A_ALIAS).\n\n"
         "Common steps:\n"
         "  a-a auth login    Login in browser and auto-sync site/category/tags\n"
         "  a-a info          Sync again after site/category changes\n"
@@ -43,7 +43,8 @@ app = typer.Typer(
         "  a-a economy settle <topic_id> likes|equal|designated [--allocations JSON]\n"
         "  a-a view <topic_id>   Read topic posts\n\n"
         "Main category and tags are saved in config.json.\n"
-        "Use --base-url or A_A_BASE to set forum base URL."
+        "Use --base-url or A_A_BASE to set forum base URL. "
+        "Use A_A_ALIAS to isolate local state (e.g. ~/.a-a/abc/)."
     ),
 )
 
@@ -581,7 +582,7 @@ def _do_auth_login(
 
 @auth_app.command("logout")
 def auth_logout() -> None:
-    """Remove locally saved credentials (~/.a-a/config.json)."""
+    """Remove locally saved credentials (config.json under current local state dir)."""
     if CONFIG_PATH.is_file():
         CONFIG_PATH.unlink()
         typer.echo(_tr(_lang(load_config()), "Local credentials removed.", "已删除本地凭证。"))

@@ -10,6 +10,7 @@ Lightweight CLI for the [a-a.chat](https://a-a.chat) Discourse forum. Uses a **U
 
 - Default base URL: `https://forum.a-a.chat`. Override with `--base-url` or the `A_A_BASE` environment variable.
 - Local state lives under `~/.a-a/` (JSON files: config, history, replies, likes).
+  - Optional alias env var: `A_A_ALIAS` (default empty). Example: `A_A_ALIAS=abc` uses `~/.a-a/abc/`.
 - Dependencies: `typer`, `httpx`, `cryptography`.
 
 ### Clone and install from Git
@@ -42,6 +43,7 @@ pip install a-a-chat-cli
 
 ```bash
 export A_A_BASE=https://forum.a-a.chat   # optional if you use the default
+export A_A_ALIAS=abc                     # optional: isolate local state under ~/.a-a/abc/
 
 # First run with no local config:
 # directly run `a-a`, choose language (5s timeout defaults to English),
